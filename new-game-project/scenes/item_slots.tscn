@@ -1,0 +1,96 @@
+[gd_scene format=3 uid="uid://swdhlegfrvft"]
+
+[ext_resource type="Texture2D" uid="uid://do0xxfsaysf4b" path="res://assets/grid.png" id="1_b02vi"]
+
+[node name="InventoryContainer" type="ScrollContainer" unique_id=1664698151]
+offset_left = 1504.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1319232482]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=2065567761]
+layout_mode = 2
+offset_transform_enabled = true
+theme_override_constants/separation = 0
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/HBoxContainer" unique_id=1213841260]
+layout_mode = 2
+texture = ExtResource("1_b02vi")
+stretch_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer" unique_id=905873838]
+layout_mode = 2
+texture = ExtResource("1_b02vi")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer" unique_id=1173580770]
+layout_mode = 2
+offset_transform_enabled = true
+theme_override_constants/separation = 0
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/HBoxContainer2" unique_id=1132172150]
+layout_mode = 2
+texture = ExtResource("1_b02vi")
+stretch_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer2" unique_id=641631142]
+layout_mode = 2
+texture = ExtResource("1_b02vi")
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer" unique_id=1050791771]
+layout_mode = 2
+offset_transform_enabled = true
+theme_override_constants/separation = 0
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/HBoxContainer3" unique_id=2094472420]
+layout_mode = 2
+texture = ExtResource("1_b02vi")
+stretch_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer3" unique_id=908328736]
+layout_mode = 2
+texture = ExtResource("1_b02vi")
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="VBoxContainer" unique_id=69125275]
+layout_mode = 2
+offset_transform_enabled = true
+theme_override_constants/separation = 0
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/HBoxContainer4" unique_id=327582391]
+layout_mode = 2
+texture = ExtResource("1_b02vi")
+stretch_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer4" unique_id=1739114556]
+layout_mode = 2
+texture = ExtResource("1_b02vi")
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="VBoxContainer" unique_id=820820737]
+layout_mode = 2
+offset_transform_enabled = true
+theme_override_constants/separation = 0
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/HBoxContainer5" unique_id=1910293439]
+layout_mode = 2
+texture = ExtResource("1_b02vi")
+stretch_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer5" unique_id=156242141]
+layout_mode = 2
+texture = ExtResource("1_b02vi")
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="VBoxContainer" unique_id=1663604789]
+layout_mode = 2
+offset_transform_enabled = true
+theme_override_constants/separation = 0
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/HBoxContainer6" unique_id=1366433864]
+layout_mode = 2
+texture = ExtResource("1_b02vi")
+stretch_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer6" unique_id=1732893766]
+layout_mode = 2
+texture = ExtResource("1_b02vi")

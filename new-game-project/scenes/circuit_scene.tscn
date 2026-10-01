@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://b3y5cfs1q2po8"]
+
+[ext_resource type="Texture2D" uid="uid://c6os2lrdmly7p" path="res://assets/circuit_scene.png" id="1_16uxf"]
+
+[node name="circuit_scene" type="CanvasLayer" unique_id=831005937]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1024503610]
+position = Vector2(752, 540)
+texture = ExtResource("1_16uxf")

@@ -1,0 +1,118 @@
+[gd_scene format=3 uid="uid://yicge48108e0"]
+
+[ext_resource type="PackedScene" uid="uid://joa1e7j6y6b" path="res://scenes/background_2.tscn" id="2_lbhrr"]
+[ext_resource type="PackedScene" uid="uid://wqoowr2ds3q7" path="res://scenes/background.tscn" id="2_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://75aqq3k63ldf" path="res://scenes/right_arrow.tscn" id="3_lbhrr"]
+[ext_resource type="PackedScene" uid="uid://do2gifwa1ifyc" path="res://scenes/background_3.tscn" id="3_p57ef"]
+[ext_resource type="PackedScene" uid="uid://dgfb8pm5ejheo" path="res://scenes/left_arrow.tscn" id="4_iywne"]
+[ext_resource type="PackedScene" uid="uid://22cxivm0arbp" path="res://scenes/background_4.tscn" id="4_u5sy4"]
+[ext_resource type="PackedScene" uid="uid://dngbvau0ir4v7" path="res://scenes/cabinet‌.tscn" id="5_gee14"]
+[ext_resource type="PackedScene" uid="uid://dcxup5dmraoxm" path="res://scenes/wire.tscn" id="5_vtaks"]
+[ext_resource type="Script" uid="uid://oprbh1uqelnd" path="res://scenes/cabinet‌.gd" id="6_0tnpc"]
+[ext_resource type="PackedScene" uid="uid://dfq4hok1smhtc" path="res://scenes/key.tscn" id="7_u5sy4"]
+
+[sub_resource type="Animation" id="Animation_u5sy4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(813, 469)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_gee14"]
+resource_name = "fly_in"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(717, 758), Vector2(1594, 323.00003)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.8, 0.8), Vector2(0.6, 0.6)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0tnpc"]
+_data = {
+&"RESET": SubResource("Animation_u5sy4"),
+&"fly_in": SubResource("Animation_gee14")
+}
+
+[node name="game" type="Node2D" unique_id=510391820]
+
+[node name="left_arrow" parent="." unique_id=1179037327 instance=ExtResource("4_iywne")]
+position = Vector2(91, 534)
+scale = Vector2(0.3, 0.3)
+
+[node name="right_arrow" parent="." unique_id=928327234 instance=ExtResource("3_lbhrr")]
+visibility_layer = 513
+position = Vector2(1426, 534)
+scale = Vector2(0.3, 0.3)
+
+[node name="background" parent="." unique_id=831005937 instance=ExtResource("2_yqjtg")]
+layer = -100
+
+[node name="background2" parent="." unique_id=67282212 instance=ExtResource("2_lbhrr")]
+layer = -99
+
+[node name="wire" parent="background2" unique_id=676068455 node_paths=PackedStringArray("cabinet‌") instance=ExtResource("5_vtaks")]
+visible = false
+z_index = 1
+position = Vector2(813, 469)
+"cabinet‌" = NodePath("../cabinet‌")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="background2/wire" unique_id=1969678258]
+libraries/ = SubResource("AnimationLibrary_0tnpc")
+
+[node name="cabinet‌" parent="background2" unique_id=899625525 node_paths=PackedStringArray("key") instance=ExtResource("5_gee14")]
+position = Vector2(724, 771)
+script = ExtResource("6_0tnpc")
+key = NodePath("../../background4/key")
+
+[node name="background3" parent="." unique_id=2053305194 instance=ExtResource("3_p57ef")]
+layer = -98
+visible = false
+
+[node name="background4" parent="." unique_id=261385745 instance=ExtResource("4_u5sy4")]
+layer = -97
+visible = false
+
+[node name="key" parent="background4" unique_id=419016448 instance=ExtResource("7_u5sy4")]
+position = Vector2(813, 469)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="background4/key" unique_id=1553012098]
+libraries/ = SubResource("AnimationLibrary_0tnpc")

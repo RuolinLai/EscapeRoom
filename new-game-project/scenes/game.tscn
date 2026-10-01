@@ -1,0 +1,195 @@
+[gd_scene format=3 uid="uid://yicge48108e0"]
+
+[ext_resource type="Script" uid="uid://wp4bxhujcbjw" path="res://scripts/game.gd" id="1_dinhu"]
+[ext_resource type="PackedScene" uid="uid://swdhlegfrvft" path="res://scenes/item_slots.tscn" id="1_kvpfn"]
+[ext_resource type="PackedScene" uid="uid://cfygaxhingfdh" path="res://scenes/ceiling.tscn" id="2_bt5mj"]
+[ext_resource type="PackedScene" uid="uid://joa1e7j6y6b" path="res://scenes/background_2.tscn" id="2_lbhrr"]
+[ext_resource type="PackedScene" uid="uid://krn3ni2xkohs" path="res://scenes/password_scene.tscn" id="2_pl11u"]
+[ext_resource type="PackedScene" uid="uid://cjxnbs2mp0up2" path="res://scenes/start_scene.tscn" id="2_qnb83"]
+[ext_resource type="PackedScene" uid="uid://bvqx0v4qy4xfo" path="res://scenes/line_manager.tscn" id="2_ssvqc"]
+[ext_resource type="PackedScene" uid="uid://wqoowr2ds3q7" path="res://scenes/background.tscn" id="2_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://b2n1gge5pb7nl" path="res://scenes/floor.tscn" id="3_e1j6l"]
+[ext_resource type="PackedScene" uid="uid://75aqq3k63ldf" path="res://scenes/right_arrow.tscn" id="3_lbhrr"]
+[ext_resource type="PackedScene" uid="uid://do2gifwa1ifyc" path="res://scenes/background_3.tscn" id="3_p57ef"]
+[ext_resource type="PackedScene" uid="uid://bug7q4xb342k8" path="res://scenes/up_arrow.tscn" id="4_5newe"]
+[ext_resource type="PackedScene" uid="uid://dgfb8pm5ejheo" path="res://scenes/left_arrow.tscn" id="4_iywne"]
+[ext_resource type="PackedScene" uid="uid://22cxivm0arbp" path="res://scenes/background_4.tscn" id="4_u5sy4"]
+[ext_resource type="PackedScene" uid="uid://cs0hfft44bjia" path="res://scenes/down_arrow.tscn" id="5_37s47"]
+[ext_resource type="PackedScene" uid="uid://dngbvau0ir4v7" path="res://scenes/cabinet‌.tscn" id="5_gee14"]
+[ext_resource type="PackedScene" uid="uid://dcxup5dmraoxm" path="res://scenes/wire.tscn" id="5_vtaks"]
+[ext_resource type="PackedScene" uid="uid://b3y5cfs1q2po8" path="res://scenes/circuit_scene.tscn" id="6_trtic"]
+[ext_resource type="PackedScene" uid="uid://csdh50j6r6k7g" path="res://scenes/confirm_button.tscn" id="7_ca42v"]
+[ext_resource type="PackedScene" uid="uid://c8qwjjcygktcd" path="res://scenes/close_button.tscn" id="7_ir15t"]
+[ext_resource type="PackedScene" uid="uid://b6hythsujv5yf" path="res://scenes/line_node.tscn" id="7_rysoc"]
+[ext_resource type="PackedScene" uid="uid://dfq4hok1smhtc" path="res://scenes/key.tscn" id="7_u5sy4"]
+[ext_resource type="PackedScene" uid="uid://dqwvquje7txxo" path="res://scenes/background_1.tscn" id="11_264po"]
+[ext_resource type="PackedScene" uid="uid://bi1dlbyq5kha2" path="res://scenes/circuit_board.tscn" id="11_kvuet"]
+[ext_resource type="PackedScene" uid="uid://28agk6m7uk6p" path="res://scenes/tv.tscn" id="12_1kice"]
+[ext_resource type="PackedScene" uid="uid://dwy7f7ij1ye76" path="res://scenes/door.tscn" id="16_e1j6l"]
+[ext_resource type="PackedScene" uid="uid://bxfoivyegjjgq" path="res://scenes/complete_scene.tscn" id="27_qnb83"]
+
+[node name="game" type="Node2D" unique_id=510391820]
+script = ExtResource("1_dinhu")
+
+[node name="start_scene" parent="." unique_id=831005937 instance=ExtResource("2_qnb83")]
+visible = false
+z_index = 100
+
+[node name="password_scene" parent="." unique_id=125608280 node_paths=PackedStringArray("password_scene") instance=ExtResource("2_pl11u")]
+visible = false
+z_index = 200
+password_scene = NodePath(".")
+
+[node name="close_button" parent="password_scene" unique_id=1597075814 instance=ExtResource("7_ir15t")]
+position = Vector2(30, 32)
+
+[node name="ceiling" parent="." unique_id=498602527 instance=ExtResource("2_bt5mj")]
+layer = -70
+visible = false
+
+[node name="floor" parent="." unique_id=315935251 instance=ExtResource("3_e1j6l")]
+layer = -80
+visible = false
+
+[node name="line_manager" parent="." unique_id=1158431247 node_paths=PackedStringArray("color_rect", "tv", "ceiling", "circuit_scene") instance=ExtResource("2_ssvqc")]
+color_rect = NodePath("../ColorRect")
+tv = NodePath("../background1/tv")
+ceiling = NodePath("../ceiling")
+circuit_scene = NodePath("../circuit_scene")
+
+[node name="InventoryContainer" parent="." unique_id=1664698151 instance=ExtResource("1_kvpfn")]
+
+[node name="up_arrow" parent="." unique_id=676068455 node_paths=PackedStringArray("game") instance=ExtResource("4_5newe")]
+position = Vector2(752, 85.99999)
+scale = Vector2(0.3, 0.3)
+game = NodePath("..")
+
+[node name="down_arrow" parent="." unique_id=2003900676 node_paths=PackedStringArray("game") instance=ExtResource("5_37s47")]
+z_index = 5
+position = Vector2(752, 991.00006)
+scale = Vector2(0.3, 0.3)
+game = NodePath("..")
+
+[node name="left_arrow" parent="." unique_id=1179037327 node_paths=PackedStringArray("game") instance=ExtResource("4_iywne")]
+z_index = 5
+position = Vector2(91, 540)
+scale = Vector2(0.3, 0.3)
+game = NodePath("..")
+
+[node name="right_arrow" parent="." unique_id=928327234 node_paths=PackedStringArray("game") instance=ExtResource("3_lbhrr")]
+visibility_layer = 513
+z_index = 5
+position = Vector2(1426, 540)
+scale = Vector2(0.3, 0.3)
+game = NodePath("..")
+
+[node name="circuit_scene" parent="." unique_id=1595047377 instance=ExtResource("6_trtic")]
+visible = false
+
+[node name="line_node" parent="circuit_scene" unique_id=574548238 instance=ExtResource("7_rysoc")]
+z_index = 1
+position = Vector2(480, 138)
+scale = Vector2(0.35, 0.35)
+is_start_point = true
+
+[node name="confirm_button" parent="circuit_scene" unique_id=1146004497 node_paths=PackedStringArray("line_manager") instance=ExtResource("7_ca42v")]
+z_index = 1
+position = Vector2(1233, 25)
+line_manager = NodePath("../../line_manager")
+
+[node name="close_button" parent="circuit_scene" unique_id=348652645 instance=ExtResource("7_ir15t")]
+position = Vector2(16, 32)
+
+[node name="line_node2" parent="circuit_scene" unique_id=368261850 instance=ExtResource("7_rysoc")]
+z_index = 1
+position = Vector2(740.00006, 138)
+scale = Vector2(0.35, 0.35)
+is_start_point = true
+
+[node name="line_node3" parent="circuit_scene" unique_id=1025621320 instance=ExtResource("7_rysoc")]
+z_index = 1
+position = Vector2(1004, 138)
+scale = Vector2(0.35, 0.35)
+is_start_point = true
+
+[node name="line_node4" parent="circuit_scene" unique_id=1125692592 instance=ExtResource("7_rysoc")]
+z_index = 1
+position = Vector2(467, 962.99994)
+scale = Vector2(0.35, 0.35)
+
+[node name="line_node5" parent="circuit_scene" unique_id=661885438 instance=ExtResource("7_rysoc")]
+z_index = 1
+position = Vector2(741, 962.99994)
+scale = Vector2(0.35, 0.35)
+
+[node name="line_node6" parent="circuit_scene" unique_id=1109101986 instance=ExtResource("7_rysoc")]
+z_index = 1
+position = Vector2(1016.99994, 960.99994)
+scale = Vector2(0.35, 0.35)
+
+[node name="background" parent="." unique_id=685784641 instance=ExtResource("2_yqjtg")]
+layer = -1000
+
+[node name="background1" parent="." unique_id=1379645905 instance=ExtResource("11_264po")]
+layer = -100
+visible = false
+
+[node name="door" parent="background1" unique_id=1680311697 node_paths=PackedStringArray("password_scene", "complete_scene") instance=ExtResource("16_e1j6l")]
+position = Vector2(1159, 596)
+scale = Vector2(1.1, 1.1)
+password_scene = NodePath("../../password_scene")
+complete_scene = NodePath("../../complete_scene")
+
+[node name="tv" parent="background1" unique_id=1341205684 instance=ExtResource("12_1kice")]
+position = Vector2(510.00006, 560.00006)
+scale = Vector2(1.3, 1.3)
+
+[node name="background2" parent="." unique_id=67282212 instance=ExtResource("2_lbhrr")]
+layer = -99
+visible = false
+
+[node name="cabinet‌" parent="background2" unique_id=899625525 node_paths=PackedStringArray("key", "wire", "game") instance=ExtResource("5_gee14")]
+position = Vector2(1185, 851.00006)
+scale = Vector2(1.2, 1.2)
+key = NodePath("../../background4/key")
+wire = NodePath("wire")
+game = NodePath("../..")
+
+[node name="wire" parent="background2/cabinet‌" unique_id=438322221 node_paths=PackedStringArray("cabinet‌") instance=ExtResource("5_vtaks")]
+visible = false
+z_index = 1
+position = Vector2(-6, -18)
+scale = Vector2(0.8, 0.8)
+"cabinet‌" = NodePath("..")
+
+[node name="background3" parent="." unique_id=2053305194 instance=ExtResource("3_p57ef")]
+layer = -98
+visible = false
+
+[node name="circuit_board" parent="background3" unique_id=10915155 node_paths=PackedStringArray("game", "circuit_scene") instance=ExtResource("11_kvuet")]
+position = Vector2(302, 433.00003)
+scale = Vector2(0.3, 0.3)
+game = NodePath("../..")
+circuit_scene = NodePath("../../circuit_scene")
+
+[node name="background4" parent="." unique_id=261385745 instance=ExtResource("4_u5sy4")]
+layer = -97
+visible = false
+
+[node name="key" parent="background4" unique_id=419016448 instance=ExtResource("7_u5sy4")]
+z_as_relative = false
+position = Vector2(657, 655)
+rotation = 0.7853982
+scale = Vector2(0.3, 0.3)
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=345576409]
+visible = false
+z_index = 100
+offset_right = 1504.0
+offset_bottom = 1080.0
+mouse_filter = 2
+color = Color(0, 0, 0, 0.5529412)
+
+[node name="complete_scene" parent="." unique_id=1208391803 instance=ExtResource("27_qnb83")]
+layer = 100
+visible = false

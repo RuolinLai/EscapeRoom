@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://csdh50j6r6k7g"]
+
+[ext_resource type="Script" uid="uid://246s1hyn0yvb" path="res://scripts/confirm_button.gd" id="1_8sbck"]
+[ext_resource type="Texture2D" uid="uid://2sgu4v5up6qc" path="res://assets/confirm_button.png" id="2_ym2du"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ssvqc"]
+size = Vector2(242, 99)
+
+[node name="confirm_button" type="Area2D" unique_id=1597075814]
+script = ExtResource("1_8sbck")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1913666921]
+position = Vector2(127, 53.5)
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("RectangleShape2D_ssvqc")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=647140884]
+position = Vector2(126.00001, 54)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_ym2du")

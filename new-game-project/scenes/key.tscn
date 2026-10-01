@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://dfq4hok1smhtc"]
+
+[ext_resource type="Script" uid="uid://b1x0g5kvf4866" path="res://scripts/key.gd" id="1_fttkb"]
+[ext_resource type="Texture2D" uid="uid://ckyr7cnoyppja" path="res://assets/key.png" id="1_yk2u2"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vc5oi"]
+radius = 46.005894
+height = 284.4276
+
+[sub_resource type="Gradient" id="Gradient_fttkb"]
+offsets = PackedFloat32Array(0, 0.9839369, 1)
+colors = PackedColorArray(1, 0.90588236, 0, 1, 0.9607843, 0.9607843, 0.9607843, 0, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_sxadb"]
+gradient = SubResource("Gradient_fttkb")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 1)
+metadata/_snap_count = 3
+
+[node name="key" type="Area2D" unique_id=676068455]
+script = ExtResource("1_fttkb")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1995474973]
+position = Vector2(-2.5000007, -3.4999967)
+scale = Vector2(0.27728984, 0.28998697)
+texture = ExtResource("1_yk2u2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1792827900]
+position = Vector2(1, -8)
+rotation = 0.75398225
+shape = SubResource("CapsuleShape2D_vc5oi")
+
+[node name="glow" type="Sprite2D" parent="." unique_id=199852654]
+visible = false
+position = Vector2(2.0000038, 1.0000038)
+scale = Vector2(5.546875, 5.375)
+texture = SubResource("GradientTexture2D_sxadb")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

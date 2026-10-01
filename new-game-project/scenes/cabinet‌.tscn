@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dngbvau0ir4v7"]
+
+[ext_resource type="Script" uid="uid://oprbh1uqelnd" path="res://scripts/cabinet‌.gd" id="1_75anc"]
+[ext_resource type="Texture2D" uid="uid://bb2u2wi7l6wfo" path="res://assets/cabinet.png" id="2_75anc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sxadb"]
+size = Vector2(287, 313)
+
+[node name="cabinet‌" type="Area2D" unique_id=676068455]
+script = ExtResource("1_75anc")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1995474973]
+texture = ExtResource("2_75anc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1792827900]
+position = Vector2(0.4999962, -11.5)
+shape = SubResource("RectangleShape2D_sxadb")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

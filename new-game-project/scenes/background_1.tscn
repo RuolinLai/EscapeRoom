@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dqwvquje7txxo"]
+
+[ext_resource type="Texture2D" uid="uid://pcvkgmdkkg2r" path="res://assets/bg1.png" id="1_1niro"]
+
+[node name="background1" type="CanvasLayer" unique_id=831005937]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1024503610]
+position = Vector2(752, 540)
+texture = ExtResource("1_1niro")

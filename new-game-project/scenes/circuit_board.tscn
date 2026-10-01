@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bi1dlbyq5kha2"]
+
+[ext_resource type="Script" uid="uid://40l1tlhmryd0" path="res://scenes/circuit_board.gd" id="1_1blal"]
+[ext_resource type="Texture2D" uid="uid://bb40b3eqvivck" path="res://assets/circuit_board.png" id="2_oc43y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dinhu"]
+size = Vector2(682, 746)
+
+[node name="circuit_board" type="Area2D" unique_id=676068455]
+script = ExtResource("1_1blal")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1995474973]
+texture = ExtResource("2_oc43y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1792827900]
+position = Vector2(-5, 0)
+shape = SubResource("RectangleShape2D_dinhu")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

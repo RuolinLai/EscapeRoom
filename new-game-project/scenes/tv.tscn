@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://28agk6m7uk6p"]
+
+[ext_resource type="Script" uid="uid://pmd2v68orua3" path="res://scripts/tv.gd" id="1_0vvss"]
+[ext_resource type="Texture2D" uid="uid://dofkhty0unjeo" path="res://assets/tv_power_off.png" id="1_nqyhj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ssvqc"]
+size = Vector2(443, 260)
+
+[node name="tv" type="Area2D" unique_id=676068455]
+script = ExtResource("1_0vvss")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1995474973]
+texture = ExtResource("1_nqyhj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1792827900]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_ssvqc")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cfygaxhingfdh"]
+
+[ext_resource type="Texture2D" uid="uid://b0pv8vum2q0gx" path="res://assets/ceiling_turned_off.png" id="1_ji6l1"]
+
+[node name="ceiling" type="CanvasLayer" unique_id=831005937]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1024503610]
+position = Vector2(752, 540)
+texture = ExtResource("1_ji6l1")
